@@ -1,0 +1,21 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class IndexnaBukva {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        
+        String[] alphabet = new String[]{"a", "b", "c", "d", "e",
+            "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
+            "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+
+        System.out.println("Enter word: ");
+        String word = in.nextLine().toLowerCase();
+        String lineArgs[] = word.split("");
+        for (int i = 0; i < lineArgs.length; i++) {
+            System.out.println(lineArgs[i] + " -> " +
+                    Arrays.asList(alphabet).indexOf(lineArgs[i]));
+        }
+    }
+}
