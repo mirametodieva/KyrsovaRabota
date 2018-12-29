@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class ZavrashtanevMinaloto {
+  public static void main(String[] arguments){
+      Scanner in = new Scanner(System.in);
+      
+      System.out.println("The inherited money - ");
+      double inhmoney = Double.parseDouble(in.nextLine());
+      System.out.println("Year - ");
+      double year = Double.parseDouble(in.nextLine());
+      
+      for(int i=1800; i<=year; i++){
+          if(i%2==0){
+              inhmoney-=12000;
+          }
+          else{
+              inhmoney-= (12000 + 50*(i-1782));
+          }
+      }
+      if(inhmoney>12000){
+      System.out.printf("Yes! He will live a carefree life "
+              + "and will have %.2f dollars left", inhmoney);
+      }
+      else{
+          if(inhmoney<0){
+          System.out.printf("He will need %.2f dollars to survive.", 
+                  (inhmoney*-1));
+          }
+          else{
+              System.out.printf("He will need %.2f dollars to survive.", 
+                      inhmoney);
+          }
+      }
+  }  
+}
