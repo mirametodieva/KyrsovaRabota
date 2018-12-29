@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class Stop {
+
+    public static void main(String[] arguments) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter number(3-1000) : ");
+        int n = Integer.parseInt(in.nextLine());
+
+        int dots = n + 1;
+        int underscores = 2 * n + 1;
+
+        
+        for (int i = 0; i < dots; i++) {
+            System.out.print(".");
+        }
+        for (int i = 0; i < underscores; i++) {
+            System.out.print("_");
+        }
+        for (int i = 0; i < dots; i++) {
+            System.out.print(".");
+        }
+        System.out.println();
+
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < dots - 1; j++) {
+                System.out.print(".");
+            }
+            System.out.print("//");
+            for (int j = 0; j < (underscores - 2); j++) {
+                System.out.print("_");
+            }
+            underscores += 2;
+            System.out.print("\\\\");
+            for (int j = 0; j < dots - 1; j++) {
+                System.out.print(".");
+            }
+            dots--;
+            System.out.println();
+        }
+
+       
+        System.out.print("//");
+        for (int i = 0; i < (underscores - 6) / 2; i++) {
+            System.out.print("_");
+        }
+        System.out.print("STOP!");
+        for (int i = 0; i < (underscores - 6) / 2; i++) {
+            System.out.print("_");
+        }
+        System.out.print("\\\\");
+        System.out.println();
+
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(".");
+            }
+            System.out.print("\\\\");
+            for (int j = 0; j < underscores - 2; j++) {
+                System.out.print("_");
+            }
+            underscores -= 2;
+            System.out.print("//");
+            for (int j = 0; j < i; j++) {
+                System.out.print(".");
+            }
+            System.out.println();
+        }
+    }
+}
