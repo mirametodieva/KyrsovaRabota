@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class ZelenchykovaBorsa {
+
+    public static void main(String[] arguments) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter price for 1 kg vegetable ");
+        double vegPrice = Double.parseDouble(in.nextLine());
+        System.out.print("Enter price for 1 kg fruit ");
+        double fruitPrice = Double.parseDouble(in.nextLine());
+        System.out.print("Enter total vegetable ");
+        int vegKg = Integer.parseInt(in.nextLine());
+        System.out.print("Enter total fruit ");
+        int fruitKg = Integer.parseInt(in.nextLine());
+
+        double vegTotal = vegPrice * vegKg;
+        double fruitTotal = fruitPrice * fruitKg;
+
+        System.out.println("The profit is " + (fruitTotal + vegTotal) / 1.94);
+    }
+}
