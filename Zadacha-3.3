@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+class OperaciiMejdyChisla {
+
+    public static void main(String[] arguments) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter N1 - ");
+        int number1 = Integer.parseInt(in.nextLine());
+        System.out.print("Enter N2 - ");
+        int number2 = Integer.parseInt(in.nextLine());
+        System.out.print("+, -, *, /, % : ");
+        String symbol = in.nextLine();
+
+        double numbers = 0;
+
+        if (symbol.contains("+")) {
+            numbers = number1 + number2;
+
+            if (numbers % 2 == 0) {
+                System.out.println(number1 + " + " + number2 + " = " +
+                        numbers + " - even");
+            } else {
+                System.out.println(number1 + " + " + number2 + " = " +
+                        numbers + " - odd");
+            }
+        } else if (symbol.contains("-")) {
+            numbers = number1 - number2;
+
+            if (numbers % 2 == 0) {
+                System.out.println(number1 + " - " + number2 + " = " + 
+                        numbers + " - even");
+            } else {
+                System.out.println(number1 + " - " + number2 + " = " +
+                        numbers + " - odd");
+            }
+        } else if (symbol.contains("*")) {
+            numbers = number1 * number2;
+
+            if (numbers % 2 == 0) {
+                System.out.println(number1 + " * " + number2 + " = " + 
+                        numbers + " - even");
+            } else {
+                System.out.println(number1 + " * " + number2 + " = " + 
+                        numbers + " - odd");
+            }
+        } else if (symbol.contains("/")) {
+            if (number2 == 0) {
+                System.out.printf("Cannot divide %d by zero", number1);
+            } else {
+                numbers = (double) number1 / (double) number2;
+                System.out.printf("%d / %d = %.2f", number1, number2, numbers);
+            }
+        } else if (symbol.contains("%")) {
+            numbers = number1 % number2;
+            System.out.println(number1 + " % " + number2 + " = " + numbers);
+        }
+
+    }
+}
